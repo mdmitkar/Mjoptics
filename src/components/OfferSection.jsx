@@ -1,19 +1,26 @@
 import React from 'react';
 import { Sparkles, ArrowRight, Zap } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const OfferSection = () => {
     return (
-        <section className="py-24 bg-white">
+        <section className="py-24 bg-white overflow-hidden">
             <div className="container-custom">
                 <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
                     {/* Main Offer Card */}
-                    <div className="relative rounded-3xl overflow-hidden h-[450px] group shadow-xl border-4 border-white flex">
+                    <motion.div 
+                        initial={{ opacity: 0, x: -50 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true, margin: "-50px" }}
+                        transition={{ type: "spring", stiffness: 100, damping: 20 }}
+                        className="relative rounded-3xl overflow-hidden h-[450px] group shadow-xl border-4 border-white flex"
+                    >
                         <img
                             src="/assets/banner_offer.png"
                             alt="Special Offer"
-                            className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                            className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-110"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/40 to-transparent flex flex-col justify-center p-8 lg:p-12 text-white space-y-6">
+                        <div className="absolute inset-0 bg-linear-to-r from-primary/95 via-primary/70 to-transparent flex flex-col justify-center p-8 lg:p-12 text-white space-y-6">
                             <div className="flex items-center gap-2 bg-cta-highlight px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest w-fit shadow-lg">
                                 <Sparkles className="w-3 h-3" /> Exclusive Deal
                             </div>
@@ -26,11 +33,17 @@ const OfferSection = () => {
                                 Claim Offer
                             </button>
                         </div>
-                    </div>
+                    </motion.div>
 
                     {/* Secondary Offer Card */}
-                    <div className="bg-soft-bg border-4 border-white rounded-3xl p-8 lg:p-12 flex flex-col justify-center space-y-8 relative overflow-hidden group shadow-lg">
-                        <div className="absolute -top-12 -right-12 p-12 opacity-10 group-hover:opacity-20 transition-all rotate-12">
+                    <motion.div 
+                        initial={{ opacity: 0, x: 50 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true, margin: "-50px" }}
+                        transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.2 }}
+                        className="bg-soft-bg border-4 border-white rounded-3xl p-8 lg:p-12 flex flex-col justify-center space-y-8 relative overflow-hidden group shadow-lg"
+                    >
+                        <div className="absolute -top-12 -right-12 p-12 opacity-10 group-hover:opacity-20 transition-all rotate-12 duration-700 ease-out group-hover:rotate-45 group-hover:scale-110">
                             <Zap className="w-48 h-48 text-accent" />
                         </div>
                         <div className="space-y-4 relative z-10">
@@ -42,10 +55,10 @@ const OfferSection = () => {
                             <span className="text-4xl lg:text-5xl font-black text-cta-highlight tracking-tighter">₹899</span>
                             <span className="text-slate-300 line-through text-lg lg:text-xl font-bold">₹1,999</span>
                         </div>
-                        <button className="btn-primary w-fit py-4 px-10 flex items-center gap-3 relative z-10 uppercase tracking-widest text-sm">
+                        <button className="btn-primary w-fit py-4 px-10 flex items-center gap-3 relative z-10 uppercase tracking-widest text-sm transition-transform hover:-translate-y-1">
                             Shop UV Tech <ArrowRight className="w-4 h-4" />
                         </button>
-                    </div>
+                    </motion.div>
                 </div>
             </div>
         </section>

@@ -42,19 +42,19 @@
     }
 
     .premium-card {
-        @apply bg-white rounded-premium shadow-sm border border-light-gray transition-all duration-300 hover:shadow-lg hover:-translate-y-1 overflow-hidden;
+        @apply bg-white rounded-[14px] shadow-sm border border-light-gray transition-all duration-300 hover:shadow-lg hover:-translate-y-1 overflow-hidden;
     }
 
     .btn-premium {
-        @apply inline-flex items-center justify-center px-8 py-3.5 rounded-premium font-bold transition-all active:scale-95 shadow-md;
+        @apply inline-flex items-center justify-center px-8 py-3.5 rounded-[14px] font-bold transition-all active:scale-95 shadow-md;
     }
 
     .btn-primary {
-        @apply btn-premium bg-primary text-white hover:bg-opacity-90;
+        @apply inline-flex items-center justify-center px-8 py-3.5 rounded-[14px] font-bold transition-all active:scale-95 shadow-md bg-primary text-white hover:opacity-90;
     }
 
     .btn-accent {
-        @apply btn-premium bg-accent text-white hover:bg-opacity-90;
+        @apply inline-flex items-center justify-center px-8 py-3.5 rounded-[14px] font-bold transition-all active:scale-95 shadow-md bg-accent text-white hover:opacity-90;
     }
 
     .nav-link {

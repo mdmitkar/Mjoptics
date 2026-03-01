@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-
+import SplitTextReveal from './SplitTextReveal';
 const slides = [
     {
         image: '/banner1.png',
@@ -63,7 +63,7 @@ const HeroSlider = () => {
                     />
 
                     {/* Gradient Overlay for Readability */}
-                    <div className={`absolute inset-0 bg-gradient-to-r ${slides[current].color} via-transparent to-transparent`}></div>
+                    <div className={`absolute inset-0 bg-linear-to-r ${slides[current].color} via-transparent to-transparent`}></div>
 
                     {/* Content Overlay */}
                     <div className="absolute inset-0 flex items-center">
@@ -75,7 +75,7 @@ const HeroSlider = () => {
                                 className="max-w-2xl space-y-6 text-white"
                             >
                                 <h1 className="text-5xl md:text-7xl font-black leading-tight drop-shadow-xl uppercase tracking-tighter">
-                                    {slides[current].title}
+                                    <SplitTextReveal text={slides[current].title} />
                                 </h1>
                                 <p className="text-lg md:text-2xl font-medium opacity-90 drop-shadow-md">
                                     {slides[current].subtitle}
@@ -105,14 +105,25 @@ const HeroSlider = () => {
                 <ChevronRight className="w-8 h-8" />
             </button>
 
-            {/* Slide Indicators (Dots) */}
+            {/* Slide Indicators (Progress Bars) */}
             <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-3">
                 {slides.map((_, idx) => (
                     <button
                         key={idx}
                         onClick={() => setCurrent(idx)}
-                        className={`transition-all duration-300 rounded-full h-2 ${idx === current ? 'w-10 bg-accent' : 'w-2 bg-white/50 hover:bg-white'}`}
-                    />
+                        className="relative h-2 w-16 bg-white/30 rounded-full overflow-hidden hover:bg-white/50 transition-colors"
+                    >
+                        {idx === current ? (
+                            <motion.div
+                                className="absolute top-0 left-0 bottom-0 bg-accent"
+                                initial={{ width: "0%" }}
+                                animate={{ width: "100%" }}
+                                transition={{ duration: 5, ease: "linear" }}
+                            />
+                        ) : (
+                            <div className="absolute top-0 left-0 bottom-0 bg-white/0" />
+                        )}
+                    </button>
                 ))}
             </div>
         </section>

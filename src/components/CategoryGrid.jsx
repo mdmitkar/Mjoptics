@@ -1,5 +1,6 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import { Eye, Shield, User, Monitor, Sun, Zap } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const categories = [
     { name: 'Eyeglasses', img: '/assets/category_eyeglasses.png', path: '/eyeglasses', icon: Eye },
@@ -10,45 +11,55 @@ const categories = [
     { name: 'Power Sunglasses', img: '/assets/category_power_sunglasses.png', path: '/sunglasses', icon: Zap },
 ];
 
+const containerVariants = {
+    hidden: { opacity: 0 },
+    show: {
+        opacity: 1,
+        transition: { staggerChildren: 0.1, delayChildren: 0.2 }
+    }
+};
+
+const itemVariants = {
+    hidden: { opacity: 0, scale: 0.9, y: 30 },
+    show: { 
+        opacity: 1, 
+        scale: 1, 
+        y: 0,
+        transition: { type: "spring", stiffness: 100, damping: 15 } 
+    }
+};
+
 const CategoryGrid = () => {
-    const sectionRef = useRef(null);
-
-    useEffect(() => {
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    }
-                });
-            },
-            { threshold: 0.1 }
-        );
-
-        const children = sectionRef.current.querySelectorAll('.reveal');
-        children.forEach((child) => observer.observe(child));
-
-        return () => observer.disconnect();
-    }, []);
-
     return (
-        <section ref={sectionRef} className="py-24 bg-white">
+        <section className="py-24 bg-white overflow-hidden">
             <div className="container-custom">
-                <div className="text-center mb-16 space-y-4 reveal">
+                <motion.div 
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-100px" }}
+                    transition={{ duration: 0.8, ease: "easeOut" }}
+                    className="text-center mb-16 space-y-4"
+                >
                     <div className="inline-block px-4 py-1.5 bg-accent/10 text-primary rounded-full text-xs font-black uppercase tracking-widest">Explore Collections</div>
                     <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tighter">Shop by Category</h2>
                     <div className="w-20 h-1.5 bg-accent mx-auto rounded-full"></div>
-                </div>
+                </motion.div>
 
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 md:gap-8">
+                <motion.div 
+                    variants={containerVariants}
+                    initial="hidden"
+                    whileInView="show"
+                    viewport={{ once: true, margin: "-50px" }}
+                    className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 md:gap-8"
+                >
                     {categories.map((cat, idx) => (
-                        <a
+                        <motion.a
                             href={cat.path}
                             key={cat.name}
-                            className="premium-card group cursor-pointer text-center p-6 flex flex-col items-center justify-center gap-5 reveal bg-white"
-                            style={{ transitionDelay: `${idx * 100}ms` }}
+                            variants={itemVariants}
+                            className="premium-card group cursor-pointer text-center p-6 flex flex-col items-center justify-center gap-5 bg-white shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-500"
                         >
-                            <div className="w-full aspect-square relative overflow-hidden rounded-premium bg-slate-50 flex items-center justify-center">
+                            <div className="w-full aspect-square relative overflow-hidden rounded-premium bg-slate-50 flex items-center justify-center border border-slate-100/50">
                                 <img
                                     src={cat.img}
                                     alt={cat.name}
@@ -61,9 +72,9 @@ const CategoryGrid = () => {
                                 </h3>
                                 <div className="h-0.5 w-0 bg-accent group-hover:w-full transition-all duration-300"></div>
                             </div>
-                        </a>
+                        </motion.a>
                     ))}
-                </div>
+                </motion.div>
             </div>
         </section>
     );
