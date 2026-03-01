@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
+import SunglassesPage from './pages/SunglassesPage';
 
 // Scroll to top on route change
 const ScrollToTop = () => {
@@ -78,7 +79,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/eyeglasses" element={<CategoryPage title="Eyeglasses" banner="/assets/banner_premium.png" />} />
-          <Route path="/sunglasses" element={<CategoryPage title="Sunglasses" banner="/assets/banner_uv.png" />} />
+          <Route path="/sunglasses" element={<SunglassesPage />} />
           <Route path="/contact-lenses" element={<CategoryPage title="Contact Lenses" banner="/assets/banner_home.png" />} />
           <Route path="/special-power" element={<CategoryPage title="Special Power" banner="/assets/banner_offer.png" />} />
           <Route path="/store" element={<CategoryPage title="Our Store" banner="/assets/banner_home.png" />} />

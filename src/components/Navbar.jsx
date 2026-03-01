@@ -8,6 +8,7 @@ import {
   MessageCircle,
   Star,
 } from "lucide-react";
+import SunglassesMegaMenu from "./SunglassesMegaMenu";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -50,13 +51,19 @@ const Navbar = () => {
           {/* Navigation Links */}
           <ul className="hidden lg:flex items-center gap-10">
             {navLinks.map((link) => (
-              <li key={link.name}>
-                <Link
-                  to={link.path}
-                  className={`nav-link ${isActive(link.path) ? "nav-link-active" : ""}`}
-                >
-                  {link.name}
-                </Link>
+              <li 
+                key={link.name} 
+                className={`relative ${link.name === "Sunglasses" ? "group" : ""}`}
+              >
+                <div className="py-6 flex items-center">
+                  <Link
+                    to={link.path}
+                    className={`nav-link ${isActive(link.path) ? "nav-link-active" : ""}`}
+                  >
+                    {link.name}
+                  </Link>
+                </div>
+                {link.name === "Sunglasses" && <SunglassesMegaMenu />}
               </li>
             ))}
           </ul>
