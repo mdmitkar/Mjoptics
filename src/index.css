@@ -14,8 +14,12 @@
 }
 
 @layer base {
+    * {
+        @apply scroll-smooth;
+    }
+
     body {
-        @apply bg-soft-bg text-dark-text font-sans antialiased;
+        @apply bg-white text-dark-text font-sans antialiased;
     }
 
     h1,
@@ -26,45 +30,84 @@
     h6 {
         @apply font-bold tracking-tight text-primary;
     }
+
+    section {
+        @apply py-20 px-4 md:px-8;
+    }
 }
 
 @layer components {
-    .section-padding {
-        @apply py-20 px-6 max-w-7xl mx-auto;
+    .container-custom {
+        @apply max-w-7xl mx-auto w-full px-4 md:px-8;
     }
 
     .premium-card {
-        @apply bg-white rounded-premium shadow-sm border border-light-gray transition-all duration-300 hover:shadow-xl hover:-translate-y-1 overflow-hidden;
+        @apply bg-white rounded-premium shadow-sm border border-light-gray transition-all duration-300 hover:shadow-xl hover:-translate-y-2 overflow-hidden;
+    }
+
+    .btn-premium {
+        @apply inline-flex items-center justify-center px-8 py-3.5 rounded-premium font-bold transition-all active:scale-95 shadow-lg;
     }
 
     .btn-primary {
-        @apply bg-primary text-white px-8 py-3 rounded-premium font-bold transition-all hover:bg-opacity-90 active:scale-95 shadow-lg shadow-primary/20;
+        @apply btn-premium bg-primary text-white hover:bg-opacity-90 shadow-primary/20;
     }
 
     .btn-accent {
-        @apply bg-accent text-white px-8 py-3 rounded-premium font-bold transition-all hover:bg-opacity-90 active:scale-95 shadow-lg shadow-accent/20;
+        @apply btn-premium bg-accent text-white hover:bg-opacity-90 shadow-accent/20;
     }
 
-    .btn-cta {
-        @apply bg-cta-highlight text-white px-8 py-3 rounded-premium font-bold transition-all hover:bg-opacity-90 active:scale-95 shadow-lg shadow-cta-highlight/20;
+    .nav-link {
+        @apply relative py-2 font-bold text-sm tracking-wide text-dark-text transition-colors hover:text-primary uppercase;
+    }
+
+    .nav-link-active {
+        @apply text-primary;
+    }
+
+    .nav-link-active::after {
+        @apply content-[''] absolute bottom-0 left-0 w-full h-0.5 bg-accent;
     }
 }
 
-/* Custom animations */
-@keyframes float {
-    0% {
-        transform: translateY(0px);
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
     }
 
-    50% {
-        transform: translateY(-10px);
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
     }
 
     100% {
-        transform: translateY(0px);
+        transform: translateX(-50%);
     }
 }
 
-.animate-float {
-    animation: float 4s ease-in-out infinite;
+.animate-marquee {
+    animation: marquee 40s linear infinite;
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
