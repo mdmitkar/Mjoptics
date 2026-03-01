@@ -8,28 +8,36 @@ const slides = [
         title: 'Clear Vision. Trusted for 23 Years.',
         subtitle: 'Premium eyewear experts in Kalyan West. Quality you can see.',
         cta: 'Explore Collection',
-        color: 'from-primary/60'
+        color: 'from-primary/70 via-primary/20',
+        titleClass: 'text-primary drop-shadow-sm font-black italic tracking-tighter', // Professional/Classic
+        subtitleClass: 'text-slate-800/80 font-bold max-w-lg'
     },
     {
         image: '/assets/hero_slide_2.png',
         title: 'Summer Collection 2026',
         subtitle: 'Step out in style with our latest colorful sunglasses series.',
         cta: 'Shop Sunglasses',
-        color: 'from-accent/60'
+        color: 'from-accent/80 via-accent/30',
+        titleClass: 'text-white drop-shadow-2xl font-black uppercase tracking-[0.2em]', // Vibrant/Fashion
+        subtitleClass: 'text-white/90 font-medium max-w-sm'
     },
     {
         image: '/assets/hero_slide_3.png',
         title: 'UV Protection Lenses',
         subtitle: 'Superior clarity starting from ₹899. Protect your eyes today.',
         cta: 'Shop Now',
-        color: 'from-primary/50'
+        color: 'from-slate-900/80 via-slate-900/30',
+        titleClass: 'text-white drop-shadow-lg font-extrabold tracking-tight', // Tech/Utility
+        subtitleClass: 'text-white/80 font-normal max-w-md italic'
     },
     {
         image: 'https://images.unsplash.com/photo-1574258495973-f010dfbb5371?auto=format&fit=crop&q=80&w=2000',
         title: 'Premium Frames Collection',
         subtitle: 'Handcrafted luxury frames for the sophisticated look you deserve.',
         cta: 'View Premium',
-        color: 'from-slate-900/60'
+        color: 'from-slate-950/70 via-transparent',
+        titleClass: 'text-white drop-shadow-xl font-bold font-serif italic tracking-wide', // Luxury/Elegant
+        subtitleClass: 'text-slate-200 font-light max-w-lg'
     }
 ];
 
@@ -45,7 +53,7 @@ const HeroSlider = () => {
     }, []);
 
     return (
-        <section className="relative h-[80vh] min-h-[500px] w-full mt-20 mb-0 p-0 overflow-hidden group">
+        <section className="relative h-[60vh] min-h-[400px] w-full mt-[64px] mb-0 p-0 overflow-hidden group">
             <AnimatePresence mode="wait">
                 <motion.div
                     key={current}
@@ -63,7 +71,7 @@ const HeroSlider = () => {
                     />
 
                     {/* Gradient Overlay for Readability */}
-                    <div className={`absolute inset-0 bg-linear-to-r ${slides[current].color} via-transparent to-transparent`}></div>
+                    <div className={`absolute inset-0 bg-linear-to-r ${slides[current].color} to-transparent`}></div>
 
                     {/* Content Overlay */}
                     <div className="absolute inset-0 flex items-center">
@@ -72,16 +80,16 @@ const HeroSlider = () => {
                                 initial={{ opacity: 0, x: -30 }}
                                 animate={{ opacity: 1, x: 0 }}
                                 transition={{ delay: 0.3, duration: 0.8 }}
-                                className="max-w-2xl space-y-6 text-white"
+                                className="max-w-2xl space-y-4"
                             >
-                                <h1 className="text-5xl md:text-7xl font-black leading-tight drop-shadow-xl uppercase tracking-tighter">
+                                <h1 className={`text-4xl md:text-5xl leading-tight ${slides[current].titleClass}`}>
                                     <SplitTextReveal text={slides[current].title} />
                                 </h1>
-                                <p className="text-lg md:text-2xl font-medium opacity-90 drop-shadow-md">
+                                <p className={`text-base md:text-lg ${slides[current].subtitleClass}`}>
                                     {slides[current].subtitle}
                                 </p>
-                                <div className="pt-8">
-                                    <button className="bg-white text-primary px-10 py-4 rounded-premium font-black text-lg hover:bg-accent hover:text-white transition-all transform hover:scale-105 shadow-2xl active:scale-95 uppercase tracking-widest">
+                                <div className="pt-4">
+                                    <button className="bg-white text-primary px-8 py-3 rounded-premium font-black text-sm hover:bg-accent hover:text-white transition-all transform hover:scale-105 shadow-2xl active:scale-95 uppercase tracking-widest border border-slate-100">
                                         {slides[current].cta}
                                     </button>
                                 </div>
