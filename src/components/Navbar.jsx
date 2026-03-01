@@ -36,7 +36,7 @@ const Navbar = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-500">
       <nav
-        className={`transition-all duration-500 border-b ${isScrolled ? "bg-soft-bg shadow-[0_4px_20px_-10px_rgba(216,164,164,0.3)] py-3 border-transparent" : "bg-soft-bg/80 backdrop-blur-md py-6 border-[#EBE3E3]/50"}`}
+        className={`transition-all duration-500 border-b ${isScrolled ? "bg-soft-bg shadow-[0_4px_20px_-10px_rgba(216,164,164,0.3)] py-1.5 xl:py-2 border-transparent" : "bg-soft-bg/80 backdrop-blur-md py-2 xl:py-3 border-[#EBE3E3]/50"}`}
       >
         <div className="container-custom flex justify-between items-center">
           {/* Logo */}
@@ -44,22 +44,22 @@ const Navbar = () => {
             <img
               src="/logo.png"
               alt="M J Optics"
-              className="h-10 md:h-12 w-auto object-contain transition-transform group-hover:scale-105"
+              className="h-7 md:h-8 w-auto object-contain transition-transform group-hover:scale-105"
             />
           </Link>
 
           {/* Navigation Links */}
-          <ul className="hidden lg:flex items-center gap-10">
+          <ul className="hidden lg:flex items-center gap-3 xl:gap-8">
             {navLinks.map((link) => (
               <li 
                 key={link.name} 
-                className={`relative ${link.name === "Sunglasses" ? "group" : ""}`}
+                className={`relative py-1 ${link.name === "Sunglasses" ? "group" : ""}`}
               >
-    <div className="py-7 flex items-center">
-        <Link
-        to={link.path}
-        className={`relative py-1 font-bold text-[11px] tracking-[0.15em] text-primary transition-colors hover:text-accent uppercase ${isActive(link.path) ? "text-accent" : ""}`}
-        >
+                <div className="flex items-center">
+                  <Link
+                    to={link.path}
+                    className={`relative py-1 font-bold text-[9px] xl:text-[10px] tracking-[0.15em] text-primary transition-colors hover:text-accent uppercase ${isActive(link.path) ? "text-accent" : ""}`}
+                  >
                     {link.name}
                   </Link>
                 </div>
@@ -69,35 +69,35 @@ const Navbar = () => {
           </ul>
 
           {/* Right Actions */}
-          <div className="flex items-center gap-5">
-            <div className="hidden xl:flex items-center bg-light-gray border border-transparent rounded-full px-5 py-2 focus-within:border-accent transition-all">
+          <div className="flex items-center gap-3 xl:gap-5">
+            <div className="hidden xl:flex items-center bg-light-gray border border-transparent rounded-full px-4 py-1.5 focus-within:border-accent transition-all">
               <input
                 type="text"
-                placeholder="Search premium eyewear..."
-                className="bg-transparent border-none outline-none text-sm w-44 placeholder:text-slate-400 font-medium"
+                placeholder="Search..."
+                className="bg-transparent border-none outline-none text-xs w-28 xl:w-36 placeholder:text-slate-400 font-medium"
               />
-              <Search className="w-4 h-4 text-slate-400" />
+              <Search className="w-3.5 h-3.5 text-slate-400" />
             </div>
 
             <a
               href="https://wa.me/919972414093"
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden md:flex items-center gap-2 bg-[#25D366] text-white px-5 py-2.5 rounded-full text-xs font-black hover:bg-[#25D366]/90 transition-all shadow-md active:scale-95"
+              className="hidden lg:flex items-center gap-1.5 bg-[#25D366] text-white px-4 py-2 rounded-full text-[9px] xl:text-[10px] font-black hover:bg-[#25D366]/90 transition-all shadow-md active:scale-95"
             >
-              <MessageCircle className="w-4 h-4" />
+              <MessageCircle className="w-3.5 h-3.5" />
               <span>WHATSAPP</span>
             </a>
 
-            <div className="flex items-center gap-5 text-primary">
+            <div className="flex items-center gap-4 text-primary">
               <button className="hover:scale-110 transition-transform relative group p-2">
-                <ShoppingCart className="w-5 h-5 group-hover:text-accent transition-colors" />
-                <span className="absolute 0 right-0 bg-accent text-white text-[9px] w-4 h-4 flex items-center justify-center rounded-full font-bold">
+                <ShoppingCart className="w-4 h-4 group-hover:text-accent transition-colors" />
+                <span className="absolute top-0 right-0 bg-accent text-white text-[8px] w-3.5 h-3.5 flex items-center justify-center rounded-full font-bold">
                   0
                 </span>
               </button>
-              <button className="lg:hidden hover:text-accent transition-colors">
-                <Menu className="w-6 h-6" />
+              <button className="lg:hidden hover:text-accent transition-colors p-2">
+                <Menu className="w-5 h-5" />
               </button>
             </div>
           </div>

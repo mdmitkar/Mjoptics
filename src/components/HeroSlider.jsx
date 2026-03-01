@@ -74,9 +74,9 @@ const HeroSlider = () => {
                          {slides[current].rightSideVideo && (
                              <motion.div 
                                 initial={{ opacity: 0 }}
-                                animate={{ opacity: 0.25 }}
+                                animate={{ opacity: 1 }}
                                 transition={{ duration: 1.5 }}
-                                className="absolute inset-0 z-0 mix-blend-luminosity"
+                                className="absolute inset-0 z-0"
                              >
                                  <video 
                                     autoPlay 
@@ -84,9 +84,9 @@ const HeroSlider = () => {
                                     muted 
                                     playsInline 
                                     src={slides[current].rightSideVideo}
-                                    className="w-full h-full object-cover scale-105"
+                                    className="w-full h-full object-cover scale-105 opacity-80"
                                  />
-                                 <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-primary/80"></div>
+                                 {/* Removed the blue primary gradient overlay entirely to show the raw video */}
                              </motion.div>
                          )}
 
@@ -96,11 +96,11 @@ const HeroSlider = () => {
                             transition={{ delay: 0.6, duration: 0.8, type: "spring", stiffness: 50, damping: 20 }}
                             className={`max-w-xl space-y-6 md:space-y-10 relative z-10 ${slides[current].textColor}`}
                          >
-                              <p className="text-xs md:text-sm font-bold tracking-[0.2em] uppercase opacity-70">
+                              <p className={`text-xs md:text-sm font-bold tracking-[0.2em] uppercase ${slides[current].rightSideVideo ? 'text-white' : 'opacity-70'}`}>
                                    {slides[current].subtitle}
                               </p>
                               
-                              <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif font-black leading-[1.05] tracking-tight">
+                              <h1 className={`text-3xl md:text-4xl lg:text-5xl font-serif font-black leading-[1.05] tracking-tight ${slides[current].rightSideVideo ? 'text-white' : ''}`}>
                                    <SplitTextReveal text={slides[current].title} />
                               </h1>
                               

@@ -33,7 +33,7 @@ const ProductGrid = () => {
                 <div className="flex flex-col md:flex-row justify-between items-center md:items-end mb-16 gap-8">
                     <div className="space-y-4 text-center md:text-left max-w-xl">
                         <div className="inline-block px-4 py-1.5 bg-accent/10 text-accent rounded-full text-xs font-black uppercase tracking-widest border border-accent/20">Trending Now</div>
-                        <h2 className="text-4xl md:text-6xl font-serif font-black tracking-tight text-primary">Best Sellers.</h2>
+                        <h2 className="text-3xl md:text-4xl font-serif font-black tracking-tight text-primary">Best Sellers.</h2>
                         <p className="text-slate-500 font-medium">Discover the frames that everyone is falling in love with this season.</p>
                     </div>
                     <button className="text-primary font-bold hover:text-accent transition-colors flex items-center gap-3 group border-b border-primary/20 hover:border-accent pb-1 uppercase tracking-widest text-xs">

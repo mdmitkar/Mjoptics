@@ -24,7 +24,7 @@ const OfferSection = () => {
                             <div className="flex items-center gap-2 bg-accent/90 backdrop-blur-sm px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-[0.2em] w-fit shadow-md border border-white/20">
                                 <Sparkles className="w-3 h-3" /> Exclusive Selection
                             </div>
-                            <h2 className="text-4xl lg:text-5xl font-serif font-black text-white leading-tight tracking-tight">
+                            <h2 className="text-3xl lg:text-4xl font-serif font-black text-white leading-tight tracking-tight">
                                 Buy 2 Pairs & <br />
                                 <span className="text-accent italic font-serif">Get 1 Free.</span>
                             </h2>
@@ -48,11 +48,11 @@ const OfferSection = () => {
                         </div>
                         <div className="space-y-4 relative z-10">
                             <div className="inline-block px-4 py-1.5 bg-accent/10 text-accent rounded-full text-[10px] font-bold uppercase tracking-[0.2em] border border-accent/20">The Summer Edit</div>
-                            <h3 className="text-3xl lg:text-4xl font-serif font-black text-primary leading-tight tracking-tight">UV Protection <br />Pro-Series.</h3>
+                            <h3 className="text-2xl lg:text-3xl font-serif font-black text-primary leading-tight tracking-tight">UV Protection <br />Pro-Series.</h3>
                             <p className="text-slate-500 font-medium text-sm leading-relaxed max-w-xs">Flawless clarity meets absolute protection against harmful rays.</p>
                         </div>
                         <div className="flex items-baseline gap-4 relative z-10">
-                            <span className="text-4xl lg:text-5xl font-sans font-black text-primary tracking-tight">₹899</span>
+                            <span className="text-3xl lg:text-4xl font-sans font-black text-primary tracking-tight">₹899</span>
                             <span className="text-slate-400 line-through text-lg font-bold">₹1,999</span>
                         </div>
                         <button className="border border-primary text-primary hover:bg-primary hover:text-white w-fit py-4 px-10 flex items-center gap-4 relative z-10 uppercase tracking-[0.2em] text-[10px] font-bold transition-all duration-300">

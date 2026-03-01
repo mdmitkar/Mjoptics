@@ -74,7 +74,7 @@ const CategoryGrid = () => {
                     <div className="inline-block px-4 py-1.5 bg-accent/10 text-accent rounded-full text-xs font-black uppercase tracking-widest border border-accent/20">
                         Curated Collections
                     </div>
-                    <h2 className="text-4xl md:text-6xl font-serif font-black tracking-tight text-primary">
+                    <h2 className="text-3xl md:text-4xl font-serif font-black tracking-tight text-primary">
                         Find Your Perfect Look.
                     </h2>
                     <p className="text-slate-500 font-medium">Explore our premium selection crafted for elegance and everyday comfort.</p>
@@ -106,7 +106,7 @@ const CategoryGrid = () => {
                                 <motion.div 
                                     className="overflow-hidden"
                                 >
-                                    <h3 className="text-3xl md:text-4xl font-serif font-black tracking-tight mb-2 group-hover:-translate-y-2 transition-transform duration-500">
+                                    <h3 className="text-2xl md:text-3xl font-serif font-black tracking-tight mb-2 group-hover:-translate-y-2 transition-transform duration-500">
                                         {cat.name}
                                     </h3>
                                 </motion.div>
