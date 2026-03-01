@@ -34,9 +34,9 @@ const Navbar = () => {
   const isActive = (path) => location.pathname === path;
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+    <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-500">
       <nav
-        className={`transition-all duration-300 ${isScrolled ? "bg-white shadow-xl py-3" : "bg-white/90 backdrop-blur-md py-5"}`}
+        className={`transition-all duration-500 border-b ${isScrolled ? "bg-soft-bg shadow-[0_4px_20px_-10px_rgba(216,164,164,0.3)] py-3 border-transparent" : "bg-soft-bg/80 backdrop-blur-md py-6 border-[#EBE3E3]/50"}`}
       >
         <div className="container-custom flex justify-between items-center">
           {/* Logo */}
@@ -55,11 +55,11 @@ const Navbar = () => {
                 key={link.name} 
                 className={`relative ${link.name === "Sunglasses" ? "group" : ""}`}
               >
-                <div className="py-6 flex items-center">
-                  <Link
-                    to={link.path}
-                    className={`nav-link ${isActive(link.path) ? "nav-link-active" : ""}`}
-                  >
+    <div className="py-7 flex items-center">
+        <Link
+        to={link.path}
+        className={`relative py-1 font-bold text-[11px] tracking-[0.15em] text-primary transition-colors hover:text-accent uppercase ${isActive(link.path) ? "text-accent" : ""}`}
+        >
                     {link.name}
                   </Link>
                 </div>
@@ -90,14 +90,14 @@ const Navbar = () => {
             </a>
 
             <div className="flex items-center gap-5 text-primary">
-              <button className="hover:scale-110 transition-transform relative group">
-                <ShoppingCart className="w-6 h-6" />
-                <span className="absolute -top-1 -right-1 bg-accent text-white text-[10px] w-4 h-4 flex items-center justify-center rounded-full font-bold">
+              <button className="hover:scale-110 transition-transform relative group p-2">
+                <ShoppingCart className="w-5 h-5 group-hover:text-accent transition-colors" />
+                <span className="absolute 0 right-0 bg-accent text-white text-[9px] w-4 h-4 flex items-center justify-center rounded-full font-bold">
                   0
                 </span>
               </button>
               <button className="lg:hidden hover:text-accent transition-colors">
-                <Menu className="w-7 h-7" />
+                <Menu className="w-6 h-6" />
               </button>
             </div>
           </div>
