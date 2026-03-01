@@ -3,10 +3,15 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-route
 import { useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+
+// Pages
 import Home from './pages/Home';
-import SunglassesPage from './pages/SunglassesPage';
-import SpectaclesPage from './pages/SpectaclesPage';
-import GenericCatalogPage from './pages/GenericCatalogPage';
+import AboutUs from './pages/AboutUs';
+import Collection from './pages/Collection';
+import Services from './pages/Services';
+import BookAppointment from './pages/BookAppointment';
+import TestimonialsPage from './pages/TestimonialsPage';
+import Contact from './pages/Contact';
 
 // Scroll to top on route change
 const ScrollToTop = () => {
@@ -17,22 +22,23 @@ const ScrollToTop = () => {
   return null;
 };
 
-
 function App() {
   return (
     <Router>
       <ScrollToTop />
-      <div className="min-h-screen flex flex-col">
+      <div className="min-h-screen flex flex-col bg-secondary selection:bg-accent/30 selection:text-primary">
         <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/eyeglasses" element={<SpectaclesPage />} />
-          <Route path="/sunglasses" element={<SunglassesPage />} />
-          <Route path="/contact-lenses" element={<GenericCatalogPage title="Contact Lenses" banner="/assets/banner_home.png" />} />
-          <Route path="/special-power" element={<GenericCatalogPage title="Special Power" banner="/assets/banner_offer.png" />} />
-          <Route path="/store" element={<GenericCatalogPage title="Our Store" banner="/assets/banner_home.png" />} />
-          <Route path="/offers" element={<GenericCatalogPage title="Hot Offers" banner="/assets/banner_offer.png" />} />
-        </Routes>
+        <main className="flex-grow">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<AboutUs />} />
+            <Route path="/collection" element={<Collection />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/book-appointment" element={<BookAppointment />} />
+            <Route path="/testimonials" element={<TestimonialsPage />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+        </main>
         <Footer />
       </div>
     </Router>
