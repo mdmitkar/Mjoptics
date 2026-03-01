@@ -1,1 +1,70 @@
 @import "tailwindcss";
+
+@theme {
+    --color-primary: #0E5E6F;
+    --color-accent: #2EC4B6;
+    --color-soft-bg: #F4F9F9;
+    --color-dark-text: #1E1E1E;
+    --color-light-gray: #E8EFF1;
+    --color-cta-highlight: #FF7A00;
+
+    --radius-premium: 14px;
+
+    --font-sans: 'Inter', 'Poppins', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+@layer base {
+    body {
+        @apply bg-soft-bg text-dark-text font-sans antialiased;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        @apply font-bold tracking-tight text-primary;
+    }
+}
+
+@layer components {
+    .section-padding {
+        @apply py-20 px-6 max-w-7xl mx-auto;
+    }
+
+    .premium-card {
+        @apply bg-white rounded-premium shadow-sm border border-light-gray transition-all duration-300 hover:shadow-xl hover:-translate-y-1 overflow-hidden;
+    }
+
+    .btn-primary {
+        @apply bg-primary text-white px-8 py-3 rounded-premium font-bold transition-all hover:bg-opacity-90 active:scale-95 shadow-lg shadow-primary/20;
+    }
+
+    .btn-accent {
+        @apply bg-accent text-white px-8 py-3 rounded-premium font-bold transition-all hover:bg-opacity-90 active:scale-95 shadow-lg shadow-accent/20;
+    }
+
+    .btn-cta {
+        @apply bg-cta-highlight text-white px-8 py-3 rounded-premium font-bold transition-all hover:bg-opacity-90 active:scale-95 shadow-lg shadow-cta-highlight/20;
+    }
+}
+
+/* Custom animations */
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.animate-float {
+    animation: float 4s ease-in-out infinite;
+}
