@@ -1,117 +1,122 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #0e5e6f;
-  --color-accent: #2ec4b6;
-  --color-soft-bg: #f4f9f9;
-  --color-dark-text: #1e1e1e;
-  --color-light-gray: #e8eff1;
-  --color-cta-highlight: #ff7a00;
+    --color-primary: #0E5E6F;
+    --color-accent: #2EC4B6;
+    --color-soft-bg: #F4F9F9;
+    --color-dark-text: #1E1E1E;
+    --color-light-gray: #E8EFF1;
+    --color-cta-highlight: #FF7A00;
 
-  --radius-premium: 14px;
+    --radius-premium: 14px;
 
-  --font-sans:
-    "Inter", "Poppins", ui-sans-serif, system-ui, -apple-system,
-    BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,
-    "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-    "Segoe UI Symbol", "Noto Color Emoji";
+    --font-sans: 'Inter', 'Poppins', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 @layer base {
-  * {
-    @apply scroll-smooth;
-  }
+    * {
+        @apply scroll-smooth;
+    }
 
-  body {
-    @apply bg-white text-dark-text font-sans antialiased;
-  }
+    body {
+        @apply bg-white text-dark-text font-sans antialiased;
+    }
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    @apply font-bold tracking-tight text-primary;
-  }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        @apply font-bold tracking-tight text-primary;
+    }
 
-  section {
-    @apply py-20 px-4 md:px-8;
-  }
+    section {
+        @apply py-20 px-4 md:px-8;
+    }
 }
 
 @layer components {
-  .container-custom {
-    @apply max-w-7xl mx-auto w-full px-4 md:px-8;
-  }
+    .container-custom {
+        @apply max-w-[1280px] mx-auto w-full px-4 md:px-8;
+    }
 
-  .premium-card {
-    @apply bg-white rounded-premium shadow-sm border border-light-gray transition-all duration-300 hover:shadow-xl hover:-translate-y-2 overflow-hidden;
-  }
+    .premium-card {
+        @apply bg-white rounded-premium shadow-sm border border-light-gray transition-all duration-300 hover:shadow-lg hover:-translate-y-1 overflow-hidden;
+    }
 
-  .btn-premium {
-    @apply inline-flex items-center justify-center px-8 py-3.5 rounded-premium font-bold transition-all active:scale-95 shadow-lg;
-  }
+    .btn-premium {
+        @apply inline-flex items-center justify-center px-8 py-3.5 rounded-premium font-bold transition-all active:scale-95 shadow-md;
+    }
 
-  .btn-primary {
-    @apply inline-flex items-center justify-center px-8 py-3.5 rounded-premium font-bold transition-all active:scale-95 shadow-lg bg-primary text-white hover:opacity-90 shadow-[var(--color-primary)]/20;
-  }
+    .btn-primary {
+        @apply btn-premium bg-primary text-white hover:bg-opacity-90;
+    }
 
-  .btn-accent {
-    @apply inline-flex items-center justify-center px-8 py-3.5 rounded-premium font-bold transition-all active:scale-95 shadow-lg bg-accent text-white hover:opacity-90 shadow-[var(--color-accent)]/20;
-  }
+    .btn-accent {
+        @apply btn-premium bg-accent text-white hover:bg-opacity-90;
+    }
 
-  .nav-link {
-    @apply relative py-2 font-bold text-sm tracking-wide text-dark-text transition-colors hover:text-primary uppercase;
-  }
+    .nav-link {
+        @apply relative py-2 font-bold text-sm tracking-wide text-dark-text transition-colors hover:text-primary uppercase;
+    }
 
-  .nav-link-active {
-    @apply text-primary;
-  }
+    .nav-link-active {
+        @apply text-primary;
+    }
 
-  .nav-link-active::after {
-    @apply content-[''] absolute bottom-0 left-0 w-full h-0.5 bg-accent;
-  }
+    .nav-link-active::after {
+        @apply content-[''] absolute bottom-0 left-0 w-full h-0.5 bg-accent;
+    }
 }
 
 /* Animations */
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
 
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .animate-fade-in {
-  animation: fadeIn 0.8s ease-out forwards;
+    animation: fadeIn 0.8s ease-out forwards;
 }
 
 @keyframes marquee {
-  0% {
-    transform: translateX(0);
-  }
+    0% {
+        transform: translateX(0);
+    }
 
-  100% {
-    transform: translateX(-50%);
-  }
+    100% {
+        transform: translateX(-50%);
+    }
 }
 
 .animate-marquee {
-  animation: marquee 40s linear infinite;
+    animation: marquee 40s linear infinite;
 }
 
 .reveal {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 1.2s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Custom Utilities for Redesign */
+.section-white {
+    @apply bg-white;
+}
+
+.section-gray {
+    @apply bg-soft-bg;
 }
