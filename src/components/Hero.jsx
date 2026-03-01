@@ -2,7 +2,7 @@ import React from 'react';
 
 const Hero = () => {
     return (
-        <section className="relative pt-32 pb-20 overflow-hidden bg-white">
+        <section className="relative pt-24 pb-20 overflow-hidden bg-white">
             <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
                 {/* Text Content */}
                 <div className="space-y-8 relative z-10 animate-in fade-in slide-in-from-left duration-1000">
