@@ -1,9 +1,10 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { Play, MapPin, MessageCircle, ExternalLink } from 'lucide-react';
 
 const VideoSection = () => {
     return (
-        <div className="animate-fade-in">
+        <div className="animate-fade-in bg-white">
             {/* Cinematic Video Section */}
             <section className="relative h-[650px] w-full flex items-center justify-center overflow-hidden p-0 m-0">
                 <video
@@ -19,9 +20,13 @@ const VideoSection = () => {
                 <div className="absolute inset-0 bg-gradient-to-b from-primary/70 via-primary/30 to-primary/80 backdrop-blur-[1px]"></div>
 
                 <div className="relative z-10 text-center text-white space-y-8 max-w-4xl px-8">
-                    <div className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-xl border border-white/20 px-6 py-2 rounded-full text-[10px] font-black uppercase tracking-[0.4em] mx-auto">
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-xl border border-white/20 px-6 py-2 rounded-full text-[10px] font-black uppercase tracking-[0.4em] mx-auto"
+                    >
                         <span className="w-2 h-2 bg-accent rounded-full animate-pulse"></span> Kalyan's Most Trusted Optician
-                    </div>
+                    </motion.div>
 
                     <h2 className="text-5xl md:text-8xl font-black text-white leading-[0.9] tracking-tighter uppercase drop-shadow-2xl">
                         Precision <br />
@@ -54,7 +59,13 @@ const VideoSection = () => {
             <section className="bg-soft-bg py-32 border-t border-light-gray">
                 <div className="container-custom">
                     <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 items-center">
-                        <div className="lg:w-1/2 space-y-8 reveal">
+                        <motion.div
+                            initial={{ opacity: 0, x: -50 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.8 }}
+                            className="lg:w-1/2 space-y-8"
+                        >
                             <div className="inline-block px-4 py-1.5 bg-accent/10 text-primary rounded-full text-[10px] font-black uppercase tracking-[0.2em]">Our Flagship Store</div>
                             <h2 className="text-4xl lg:text-5xl font-black leading-tight uppercase tracking-tighter">Experience <br />M J Optics In Person</h2>
                             <p className="text-xl text-slate-500 font-medium leading-relaxed">
@@ -85,25 +96,31 @@ const VideoSection = () => {
                             <button className="btn-primary w-full sm:w-fit py-4.5 px-12 text-sm uppercase tracking-[0.2em]">
                                 Get Directions
                             </button>
-                        </div>
+                        </motion.div>
 
-                        <div className="lg:w-1/2 w-full aspect-[4/3] bg-white rounded-3xl overflow-hidden shadow-2xl relative group border-8 border-white">
+                        <motion.div
+                            initial={{ opacity: 0, scale: 0.9 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.8 }}
+                            className="lg:w-1/2 w-full aspect-[4/3] bg-white rounded-3xl overflow-hidden shadow-2xl relative group border-8 border-white"
+                        >
                             <img
-                                src="https://images.unsplash.com/photo-1556740734-7f9a2b7a0d59?auto=format&fit=crop&q=80&w=1200"
+                                src="/assets/store_interior.png"
                                 alt="Store Consultation"
-                                className="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-1000"
+                                className="w-full h-full object-cover transition-all duration-1000"
                             />
-                            <div className="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-all"></div>
-                            <div className="absolute bottom-8 left-8 bg-white/95 backdrop-blur-md p-6 rounded-2xl shadow-xl max-w-xs border border-light-gray transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                            <div className="absolute bottom-8 left-8 bg-white/95 backdrop-blur-md p-6 rounded-2xl shadow-xl max-w-xs border border-light-gray transform translate-y-4 opacity-100 transition-all duration-500">
                                 <p className="text-[10px] font-black text-accent uppercase tracking-widest mb-2">Established 2003</p>
                                 <p className="text-sm font-bold text-primary leading-snug">Trust of two decades in every frame we craft.</p>
                             </div>
-                        </div>
+                        </motion.div>
                     </div>
                 </div>
             </section>
         </div>
     );
 };
+
 
 export default VideoSection;
