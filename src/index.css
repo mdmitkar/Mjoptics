@@ -58,7 +58,15 @@
     }
 
     .nav-link {
-        @apply relative py-2 font-bold text-sm tracking-wide text-dark-text transition-colors hover:text-primary uppercase;
+        @apply relative font-black text-[11px] tracking-[0.1em] text-slate-700 transition-all duration-300 hover:text-primary uppercase;
+    }
+
+    .nav-link::after {
+        @apply content-[''] absolute -bottom-1 left-0 w-0 h-[2px] bg-accent transition-all duration-300;
+    }
+
+    .nav-link:hover::after {
+        @apply w-full;
     }
 
     .nav-link-active {
@@ -66,7 +74,7 @@
     }
 
     .nav-link-active::after {
-        @apply content-[''] absolute bottom-0 left-0 w-full h-0.5 bg-accent;
+        @apply w-full bg-accent;
     }
 }
 
