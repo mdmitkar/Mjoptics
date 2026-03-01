@@ -41,7 +41,7 @@ const Header = () => {
                             />
                             <span className="text-slate-400">🔍</span>
                         </div>
-                        <button className="bg-[#25D366] text-white px-4 py-2 rounded-full text-xs font-black flex items-center gap-2 hover:bg-opacity-90 transition-all shadow-sm">
+                        <button className="bg-[#25D366] text-white px-4 py-2 rounded-full text-xs font-black flex items-center gap-2 hover:bg-[#25D366]/90 transition-all shadow-sm">
                             <span>WhatsApp</span>
                         </button>
                         <div className="flex items-center gap-3 text-primary text-xl ml-2">
