@@ -1,17 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
-import { useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 
 // Pages
 import Home from './pages/Home';
 import AboutUs from './pages/AboutUs';
-import Collection from './pages/Collection';
-import Services from './pages/Services';
-import BookAppointment from './pages/BookAppointment';
-import TestimonialsPage from './pages/TestimonialsPage';
-import Contact from './pages/Contact';
+import PrecisionLenses from './pages/PrecisionLenses';
+import Collections from './pages/Collections';
+import EyeCareServices from './pages/EyeCareServices';
+import LocationContact from './pages/LocationContact';
+import AppointmentBooking from './pages/AppointmentBooking';
 
 // Scroll to top on route change
 const ScrollToTop = () => {
@@ -31,12 +30,12 @@ function App() {
         <main className="flex-grow">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/about" element={<AboutUs />} />
-            <Route path="/collection" element={<Collection />} />
-            <Route path="/services" element={<Services />} />
-            <Route path="/book-appointment" element={<BookAppointment />} />
-            <Route path="/testimonials" element={<TestimonialsPage />} />
-            <Route path="/contact" element={<Contact />} />
+            <Route path="/about-us" element={<AboutUs />} />
+            <Route path="/precision-lenses" element={<PrecisionLenses />} />
+            <Route path="/collections" element={<Collections />} />
+            <Route path="/eye-care-services" element={<EyeCareServices />} />
+            <Route path="/location-contact" element={<LocationContact />} />
+            <Route path="/book-appointment" element={<AppointmentBooking />} />
           </Routes>
         </main>
         <Footer />
