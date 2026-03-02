@@ -187,40 +187,62 @@ const Home = () => {
       </section>
 
       {/* Craftsmanship Cinematic Section - spec-1.mp4 */}
-      <section className="relative w-full h-[70vh] overflow-hidden">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover scale-125"
-        >
-          <source src="/assets/videos/spec-1.mp4" type="video/mp4" />
-        </video>
-        {/* Dark gradient overlay */}
-        <div className="absolute inset-0 bg-linear-to-r from-primary/90 via-primary/60 to-transparent" />
-        {/* Content */}
-        <div className="absolute inset-0 flex items-center">
-          <div className="container-custom">
-            <motion.div
-              initial={{ opacity: 0, x: -40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.9 }}
-              className="max-w-xl"
+      <section className="relative w-full h-[90vh] md:h-screen overflow-hidden flex items-center">
+        <div className="absolute inset-0 w-full h-full bg-black">
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover scale-[2.8] object-center"
+          >
+            <source src="/assets/videos/spec-1.mp4" type="video/mp4" />
+          </video>
+        </div>
+
+        {/* Cinematic Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/40 to-transparent z-10" />
+        <div className="absolute inset-0 bg-gradient-to-t from-primary/30 via-transparent to-primary/20 z-10" />
+
+        {/* High-Contrast Content Layer */}
+        <div className="container-custom relative z-20">
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1, ease: "easeOut" }}
+            className="max-w-2xl px-6"
+          >
+            <motion.span
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3 }}
+              className="font-mono text-accent text-sm tracking-[0.3em] uppercase mb-6 block font-bold drop-shadow-lg"
             >
-              <span className="font-mono text-white text-sm tracking-widest uppercase mb-4 block">Handcrafted Excellence</span>
-              <h2 className="text-secondary text-4xl md:text-5xl font-bold leading-tight mb-6">
-                Precision Built,<br /><span className="text-accent">Frame by Frame.</span>
-              </h2>
-              <p className="text-secondary/70 text-lg font-sans mb-8">
-                Every pair at MJ Optics is meticulously assembled by skilled craftsmen — from hinge to lens — ensuring a perfect fit and lasting quality.
-              </p>
-              <Link to="/collections" className="btn-primary">Explore Frames</Link>
+              Handcrafted Excellence
+            </motion.span>
+
+            <h2 className="text-white text-5xl md:text-7xl font-black leading-[1.1] mb-8 drop-shadow-2xl">
+              Precision Built,<br />
+              <span className="text-secondary/90">Frame by Frame.</span>
+            </h2>
+
+            <p className="text-secondary/80 text-lg md:text-2xl font-sans mb-12 leading-relaxed max-w-xl drop-shadow-xl">
+              Every pair at MJ Optics is meticulously assembled by skilled craftsmen — from hinge to lens — ensuring a perfect fit and lasting quality.
+            </p>
+
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <Link to="/collections" className="btn-primary px-14 py-5 text-lg font-bold tracking-wider shadow-[0_0_30px_rgba(171,35,48,0.3)]">
+                Explore Frames
+              </Link>
             </motion.div>
-          </div>
+          </motion.div>
         </div>
       </section>
+
 
       {/* 3. About Us Preview */}
       <section className="py-24 bg-white relative overflow-hidden">
