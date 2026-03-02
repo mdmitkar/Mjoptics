@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, MessageCircle } from 'lucide-react';
+import Logo from './Logo';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -63,9 +64,10 @@ const Navbar = () => {
         <div className="container-custom flex justify-between items-center relative">
           {/* Logo */}
           <Link to="/" className="relative z-50">
-            <h2 className={`font-mono text-2xl tracking-tight font-semibold transition-colors duration-300 ${isMobileMenuOpen ? 'text-slate-900' : headerTextClass}`}>
-              MJ Optics
-            </h2>
+            <Logo 
+              className="w-auto h-10 md:h-12" 
+              color={isMobileMenuOpen ? "#ab2330" : "#ab2330"} 
+            />
           </Link>
 
           {/* Desktop Nav */}

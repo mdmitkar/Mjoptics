@@ -139,13 +139,20 @@ const Home = () => {
                          <img src="/images/frame1.png" alt="Premium Eyewear" className="w-full h-full object-contain mix-blend-multiply drop-shadow-xl" />
                        </motion.div>
 
-                       <h3 className="font-mono text-xl md:text-2xl text-primary font-bold tracking-tight text-center translate-z-20">
-                          Handcrafted Precision
-                       </h3>
-                       <p className="font-mono mt-2 text-accent bg-accent/10 px-3 py-1 rounded-sm text-sm font-semibold tracking-wider translate-z-30">
-                          99.9% UV PROTECTION
-                       </p>
-                    </div>
+                        {/* Visual Specs / Technical Diagram - Increased Size */}
+                        <motion.div 
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 1 }}
+                          transition={{ delay: 1.2 }}
+                          className="w-full h-48 mt-6 translate-z-20 overflow-hidden rounded-xl border border-accent/10 p-0 bg-white/50 backdrop-blur-sm"
+                        >
+                          <img 
+                            src="/images/specs_diagram.png" 
+                            alt="Technical Specifications" 
+                            className="w-full h-full object-cover mix-blend-multiply" 
+                          />
+                        </motion.div>
+                     </div>
 
                     {/* Decorative blobs inside card but behind content */}
                     <div className="absolute top-[-20%] left-[-10%] w-40 h-40 bg-accent/20 rounded-full blur-3xl translate-z-10" />

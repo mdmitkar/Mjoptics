@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import LoadingScreen from './components/LoadingScreen';
 
 // Pages
 import Home from './pages/Home';
@@ -25,6 +26,7 @@ function App() {
   return (
     <Router>
       <ScrollToTop />
+      <LoadingScreen />
       <div className="min-h-screen flex flex-col bg-secondary selection:bg-accent/30 selection:text-primary">
         <Navbar />
         <main className="flex-grow">

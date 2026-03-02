@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Facebook, Instagram, Twitter, Mail, MapPin, Phone } from 'lucide-react';
+import Logo from './Logo';
 
 const Footer = () => {
     return (
@@ -10,9 +11,7 @@ const Footer = () => {
                     {/* Brand Info */}
                     <div className="space-y-6">
                         <Link to="/">
-                            <h2 className="font-mono text-2xl tracking-tight font-semibold text-slate-900">
-                                MJ Optics
-                            </h2>
+                            <Logo className="h-8" />
                         </Link>
                         <p className="text-slate-600 leading-relaxed text-[15px] pr-4">
                             Precision Vision for Kalyan & Bhiwandi. <br />
