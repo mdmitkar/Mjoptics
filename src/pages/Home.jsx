@@ -7,6 +7,7 @@ import ProductGrid from '../components/ProductGrid';
 import VideoSection from '../components/VideoSection';
 import TrustSignals from '../components/TrustSignals';
 import SEOContent from '../components/SEOContent';
+import AestheticVideo from '../components/AestheticVideo';
 
 const Home = () => {
     return (
@@ -28,6 +29,9 @@ const Home = () => {
 
             {/* 6. Video & Store Section */}
             <VideoSection />
+
+            {/* 6.5 Aesthetic Lookbook Section */}
+            <AestheticVideo />
 
             {/* 7. Lenskart Style Trust Badges */}
             <TrustSignals />
