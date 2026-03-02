@@ -15,22 +15,22 @@ const slides = [
         btnColor: 'bg-accent text-white hover:bg-white hover:text-primary',
     },
     {
-         image: 'https://images.unsplash.com/photo-1588667319973-21c60d9ddec3?auto=format&fit=crop&q=80&w=2000',
-         title: 'Summer Radiance.',
-         subtitle: 'Step out in style with our new Champagne series.',
-         cta: 'Shop Sunglasses',
-         bgColor: 'bg-soft-bg',
-         textColor: 'text-primary',
-         btnColor: 'bg-primary text-white hover:bg-accent hover:text-white',
+        image: 'https://images.unsplash.com/photo-1588667319973-21c60d9ddec3?auto=format&fit=crop&q=80&w=2000',
+        title: 'Summer Radiance.',
+        subtitle: 'Step out in style with our new Champagne series.',
+        cta: 'Shop Sunglasses',
+        bgColor: 'bg-soft-bg',
+        textColor: 'text-primary',
+        btnColor: 'bg-primary text-white hover:bg-accent hover:text-white',
     },
     {
-         image: 'https://images.unsplash.com/photo-1473496169904-658ba7c44d8a?auto=format&fit=crop&q=80&w=2000', 
-         title: 'UV Protection.',
-         subtitle: 'Superior clarity starting from ₹899. Protect your beautiful eyes.',
-         cta: 'Shop Now',
-         bgColor: 'bg-[#EBE3E3]',
-         textColor: 'text-primary',
-         btnColor: 'bg-primary text-white hover:bg-white hover:text-primary',
+        image: 'https://images.unsplash.com/photo-1473496169904-658ba7c44d8a?auto=format&fit=crop&q=80&w=2000',
+        title: 'UV Protection.',
+        subtitle: 'Superior clarity starting from ₹899. Protect your beautiful eyes.',
+        cta: 'Shop Now',
+        bgColor: 'bg-[#EBE3E3]',
+        textColor: 'text-primary',
+        btnColor: 'bg-primary text-white hover:bg-white hover:text-primary',
     }
 ];
 
@@ -68,48 +68,48 @@ const HeroSlider = () => {
                         />
                         <div className="absolute inset-0 bg-black/10 md:bg-transparent"></div>
                     </div>
-                    
+
                     {/* Text Half */}
                     <div className="w-full md:w-1/2 h-[50%] md:h-full flex items-center justify-center p-8 md:p-20 relative overflow-hidden">
-                         {slides[current].rightSideVideo && (
-                             <motion.div 
+                        {slides[current].rightSideVideo && (
+                            <motion.div
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
                                 transition={{ duration: 1.5 }}
                                 className="absolute inset-0 z-0"
-                             >
-                                 <video 
-                                    autoPlay 
-                                    loop 
-                                    muted 
-                                    playsInline 
+                            >
+                                <video
+                                    autoPlay
+                                    loop
+                                    muted
+                                    playsInline
                                     src={slides[current].rightSideVideo}
-                                    className="w-full h-full object-cover scale-105 opacity-80"
-                                 />
-                                 {/* Removed the blue primary gradient overlay entirely to show the raw video */}
-                             </motion.div>
-                         )}
+                                    className="w-full h-full object-cover scale-150 opacity-80"
+                                />
+                                {/* Removed the blue primary gradient overlay entirely to show the raw video */}
+                            </motion.div>
+                        )}
 
-                         <motion.div
+                        <motion.div
                             initial={{ opacity: 0, x: 40 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ delay: 0.6, duration: 0.8, type: "spring", stiffness: 50, damping: 20 }}
                             className={`max-w-xl space-y-6 md:space-y-10 relative z-10 ${slides[current].textColor}`}
-                         >
-                              <p className={`text-xs md:text-sm font-bold tracking-[0.2em] uppercase ${slides[current].rightSideVideo ? 'text-white' : 'opacity-70'}`}>
-                                   {slides[current].subtitle}
-                              </p>
-                              
-                              <h1 className={`text-3xl md:text-4xl lg:text-5xl font-serif font-black leading-[1.05] tracking-tight ${slides[current].rightSideVideo ? 'text-white' : ''}`}>
-                                   <SplitTextReveal text={slides[current].title} />
-                              </h1>
-                              
-                              <div className="pt-4 md:pt-8 line-clamp-1">
-                                   <button className={`px-8 md:px-12 py-4 rounded-none font-bold text-xs md:text-sm tracking-[0.15em] uppercase transition-all duration-500 shadow-xl border border-transparent hover:border-current ${slides[current].btnColor}`}>
-                                        {slides[current].cta}
-                                   </button>
-                              </div>
-                         </motion.div>
+                        >
+                            <p className={`text-xs md:text-sm font-bold tracking-[0.2em] uppercase ${slides[current].rightSideVideo ? 'text-white' : 'opacity-70'}`}>
+                                {slides[current].subtitle}
+                            </p>
+
+                            <h1 className={`text-3xl md:text-4xl lg:text-5xl font-serif font-black leading-[1.05] tracking-tight ${slides[current].rightSideVideo ? 'text-white' : ''}`}>
+                                <SplitTextReveal text={slides[current].title} />
+                            </h1>
+
+                            <div className="pt-4 md:pt-8 line-clamp-1">
+                                <button className={`px-8 md:px-12 py-4 rounded-none font-bold text-xs md:text-sm tracking-[0.15em] uppercase transition-all duration-500 shadow-xl border border-transparent hover:border-current ${slides[current].btnColor}`}>
+                                    {slides[current].cta}
+                                </button>
+                            </div>
+                        </motion.div>
                     </div>
                 </motion.div>
             </AnimatePresence>

@@ -34,11 +34,11 @@ const Home = () => {
     const rect = card.getBoundingClientRect();
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
-    
+
     // Calculate rotation between -10 and 10 degrees
     const rX = -((y - rect.height / 2) / rect.height) * 20;
     const rY = ((x - rect.width / 2) / rect.width) * 20;
-    
+
     setRotateX(rX);
     setRotateY(rY);
   };
@@ -52,15 +52,15 @@ const Home = () => {
 
   return (
     <main className="bg-secondary min-h-screen">
-      
+
       {/* 1. Hero Section */}
       <section className="relative min-h-screen w-full flex items-center justify-center overflow-hidden pt-24 pb-16">
         <div className="container-custom relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center">
-            
+
             {/* Text Content */}
             <div className="flex flex-col items-center text-center lg:items-start lg:text-left z-10 w-full xl:pl-8">
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
@@ -69,7 +69,7 @@ const Home = () => {
                 MJ Optics : Where Style Meets Clarity
               </motion.div>
 
-              <motion.h1 
+              <motion.h1
                 variants={sentence}
                 initial="hidden"
                 animate="visible"
@@ -84,7 +84,7 @@ const Home = () => {
                 })}
               </motion.h1>
 
-              <motion.p 
+              <motion.p
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1, duration: 1 }}
@@ -92,7 +92,7 @@ const Home = () => {
               >
                 Serving the community with cutting-edge optical technology and high-end frames since 2003.
               </motion.p>
-              
+
               <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -109,41 +109,41 @@ const Home = () => {
             </div>
 
             {/* 3D Visual Element */}
-            <motion.div 
-               initial={{ opacity: 0, scale: 0.8 }}
-               animate={{ opacity: 1, scale: 1 }}
-               transition={{ duration: 1, delay: 0.6 }}
-               className="relative perspective-1000 w-full max-w-[500px] mx-auto h-[400px] md:h-[500px]"
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1, delay: 0.6 }}
+              className="relative perspective-1000 w-full max-w-[500px] mx-auto h-[400px] md:h-[500px]"
             >
-               <motion.div
-                 className="w-full h-full relative preserve-3d cursor-pointer"
-                 onMouseMove={handleMouseMove}
-                 onMouseLeave={handleMouseLeave}
-                 animate={{
-                   rotateX: rotateX,
-                   rotateY: rotateY,
-                 }}
-                 transition={{ type: "spring", stiffness: 300, damping: 30 }}
-               >
-                  {/* The Glassmorphism Card */}
-                  <div className="absolute inset-0 bg-white/40 backdrop-blur-xl border-2 border-accent-light rounded-[24px] shadow-xl overflow-hidden preserve-3d">
-                    
-                     {/* Spec-4: Full-card 3D Hinge Animation Video */}
-                     <video
-                       autoPlay
-                       muted
-                       loop
-                       playsInline
-                       className="absolute inset-0 w-full h-full object-cover"
-                     >
-                       <source src="/assets/videos/Spec-4.mp4" type="video/mp4" />
-                     </video>
+              <motion.div
+                className="w-full h-full relative preserve-3d cursor-pointer"
+                onMouseMove={handleMouseMove}
+                onMouseLeave={handleMouseLeave}
+                animate={{
+                  rotateX: rotateX,
+                  rotateY: rotateY,
+                }}
+                transition={{ type: "spring", stiffness: 300, damping: 30 }}
+              >
+                {/* The Glassmorphism Card */}
+                <div className="absolute inset-0 bg-white/40 backdrop-blur-xl border-2 border-accent-light rounded-[24px] shadow-xl overflow-hidden preserve-3d">
 
-                    {/* Decorative blobs inside card but behind content */}
-                    <div className="absolute top-[-20%] left-[-10%] w-40 h-40 bg-accent/20 rounded-full blur-3xl translate-z-10" />
-                    <div className="absolute bottom-[-10%] right-[-10%] w-32 h-32 bg-accent/30 rounded-full blur-2xl translate-z-10" />
-                  </div>
-               </motion.div>
+                  {/* Spec-4: Full-card 3D Hinge Animation Video */}
+                  <video
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    className="absolute inset-0 w-full h-full object-cover scale-150"
+                  >
+                    <source src="/assets/videos/Spec-4.mp4" type="video/mp4" />
+                  </video>
+
+                  {/* Decorative blobs inside card but behind content */}
+                  <div className="absolute top-[-20%] left-[-10%] w-40 h-40 bg-accent/20 rounded-full blur-3xl translate-z-10" />
+                  <div className="absolute bottom-[-10%] right-[-10%] w-32 h-32 bg-accent/30 rounded-full blur-2xl translate-z-10" />
+                </div>
+              </motion.div>
             </motion.div>
 
           </div>
@@ -151,38 +151,38 @@ const Home = () => {
 
         {/* Global Partner Banner */}
         <div className="absolute bottom-0 left-0 w-full overflow-hidden bg-white/80 backdrop-blur-md border-t border-slate-200 py-6">
-           <div className="flex animate-marquee whitespace-nowrap opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
-               {[...Array(2)].map((_, i) => (
-                   <div key={i} className="flex space-x-16 mx-8 items-center">
-                       <span className="font-mono font-bold text-xl text-slate-800 tracking-wider">RAY-BAN</span>
-                       <span className="font-mono font-bold text-xl text-slate-800 tracking-wider">ZEISS</span>
-                       <span className="font-mono font-bold text-xl text-slate-800 tracking-wider">CRIZAL</span>
-                       <span className="font-mono font-bold text-xl text-slate-800 tracking-wider">OAKLEY</span>
-                       <span className="font-mono font-bold text-xl text-slate-800 tracking-wider">ESSILOR</span>
-                       <span className="font-mono font-bold text-xl text-slate-800 tracking-wider">TITAN</span>
-                   </div>
-               ))}
-           </div>
+          <div className="flex animate-marquee whitespace-nowrap opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+            {[...Array(2)].map((_, i) => (
+              <div key={i} className="flex space-x-16 mx-8 items-center">
+                <span className="font-mono font-bold text-xl text-slate-800 tracking-wider">RAY-BAN</span>
+                <span className="font-mono font-bold text-xl text-slate-800 tracking-wider">ZEISS</span>
+                <span className="font-mono font-bold text-xl text-slate-800 tracking-wider">CRIZAL</span>
+                <span className="font-mono font-bold text-xl text-slate-800 tracking-wider">OAKLEY</span>
+                <span className="font-mono font-bold text-xl text-slate-800 tracking-wider">ESSILOR</span>
+                <span className="font-mono font-bold text-xl text-slate-800 tracking-wider">TITAN</span>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* Trust Bar */}
       <section className="py-20 bg-white">
         <div className="container-custom">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-accent-light">
-                <div className="p-4 py-8 md:py-0">
-                    <h3 className="text-4xl lg:text-5xl font-bold text-accent mb-2">2003</h3>
-                    <p className="font-semibold text-slate-700">Serving Kalyan Since</p>
-                </div>
-                <div className="p-4 py-8 md:py-0">
-                    <h3 className="text-4xl lg:text-5xl font-bold text-accent mb-2">10k+</h3>
-                    <p className="font-semibold text-slate-700">Happy Eyes</p>
-                </div>
-                <div className="p-4 py-8 md:py-0">
-                    <h3 className="text-4xl lg:text-5xl font-bold text-accent mb-2">4.8★</h3>
-                    <p className="font-semibold text-slate-700">Top Rated Service</p>
-                </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-accent-light">
+            <div className="p-4 py-8 md:py-0">
+              <h3 className="text-4xl lg:text-5xl font-bold text-accent mb-2">2003</h3>
+              <p className="font-semibold text-slate-700">Serving Kalyan Since</p>
             </div>
+            <div className="p-4 py-8 md:py-0">
+              <h3 className="text-4xl lg:text-5xl font-bold text-accent mb-2">10k+</h3>
+              <p className="font-semibold text-slate-700">Happy Eyes</p>
+            </div>
+            <div className="p-4 py-8 md:py-0">
+              <h3 className="text-4xl lg:text-5xl font-bold text-accent mb-2">4.8★</h3>
+              <p className="font-semibold text-slate-700">Top Rated Service</p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -193,7 +193,7 @@ const Home = () => {
           muted
           loop
           playsInline
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover scale-125"
         >
           <source src="/assets/videos/spec-1.mp4" type="video/mp4" />
         </video>
@@ -226,31 +226,31 @@ const Home = () => {
       <section className="py-24 bg-white relative overflow-hidden">
         <div className="container-custom relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <motion.div 
-               initial={{ opacity: 0, x: -30 }}
-               whileInView={{ opacity: 1, x: 0 }}
-               viewport={{ once: true }}
-               transition={{ duration: 0.8 }}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
             >
-              <h2 className="text-3xl md:text-5xl font-bold text-primary mb-6">A Legacy of <br/><span className="text-accent">Clear Vision</span></h2>
+              <h2 className="text-3xl md:text-5xl font-bold text-primary mb-6">A Legacy of <br /><span className="text-accent">Clear Vision</span></h2>
               <p className="font-sans text-slate-600 mb-6 text-lg leading-relaxed">
                 Founded in 2003, MJ Optics has been the cornerstone of eye care in Kalyan and Bhiwandi. We combine clinical excellence with premium fashion to redefine how you see the world.
               </p>
               <div className="flex gap-4 mb-8">
-                <div className="flex items-center gap-2 font-mono text-sm text-slate-500 font-semibold"><Heart className="w-4 h-4 text-accent"/> Family Owned</div>
-                <div className="flex items-center gap-2 font-mono text-sm text-slate-500 font-semibold"><Shield className="w-4 h-4 text-accent"/> Certified Pros</div>
+                <div className="flex items-center gap-2 font-mono text-sm text-slate-500 font-semibold"><Heart className="w-4 h-4 text-accent" /> Family Owned</div>
+                <div className="flex items-center gap-2 font-mono text-sm text-slate-500 font-semibold"><Shield className="w-4 h-4 text-accent" /> Certified Pros</div>
               </div>
               <Link to="/about-us" className="btn-outline">Discover Our History</Link>
             </motion.div>
-            
+
             {/* Spec-5: Magnetic Clip-on Demo - About Us showcase */}
-            <div className="relative aspect-square lg:aspect-4/3 rounded-premium overflow-hidden shadow-2xl group">
+            <div className="relative aspect-[3/4] max-w-sm mx-auto lg:mx-0 rounded-premium overflow-hidden shadow-2xl group">
               <video
                 autoPlay
                 muted
                 loop
                 playsInline
-                className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+                className="w-full h-full object-cover scale-[1.8] transform group-hover:scale-[1.9] transition-transform duration-700"
               >
                 <source src="/assets/videos/Spec-5.mp4" type="video/mp4" />
               </video>
@@ -262,37 +262,37 @@ const Home = () => {
 
       {/* 4. Collections Preview */}
       <section className="py-24 bg-secondary">
-          <div className="container-custom">
-            {/* Spec-3: Artistic Lens/Frame Montage Banner */}
-            <div className="relative w-full h-64 rounded-2xl overflow-hidden mb-12 shadow-xl">
-              <video
-                autoPlay
-                muted
-                loop
-                playsInline
-                className="absolute inset-0 w-full h-full object-cover"
-              >
-                <source src="/assets/videos/Spec-3.mp4" type="video/mp4" />
-              </video>
-              <div className="absolute inset-0 bg-gradient-to-r from-primary/80 to-primary/20 flex items-center px-12">
-                <div>
-                  <h2 className="text-secondary mb-2">Featured <span className="text-accent">Collections</span></h2>
-                  <p className="text-secondary/70 max-w-md">Explore our premium selection curated for the discerning eye.</p>
-                </div>
-                <Link to="/collections" className="btn-primary ml-auto hidden md:inline-flex whitespace-nowrap">View All Styles</Link>
+        <div className="container-custom">
+          {/* Spec-3: Artistic Lens/Frame Montage Banner */}
+          <div className="relative w-full h-64 rounded-2xl overflow-hidden mb-12 shadow-xl">
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="absolute inset-0 w-full h-full object-cover"
+            >
+              <source src="/assets/videos/Spec-3.mp4" type="video/mp4" />
+            </video>
+            <div className="absolute inset-0 bg-gradient-to-r from-primary/80 to-primary/20 flex items-center px-12">
+              <div>
+                <h2 className="text-secondary mb-2">Featured <span className="text-accent">Collections</span></h2>
+                <p className="text-secondary/70 max-w-md">Explore our premium selection curated for the discerning eye.</p>
               </div>
+              <Link to="/collections" className="btn-primary ml-auto hidden md:inline-flex whitespace-nowrap">View All Styles</Link>
             </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                  {products.slice(0, 3).map((product, index) => (
-                      <ProductCard key={product.id} product={product} index={index} />
-                  ))}
-              </div>
-              
-              <div className="mt-12 text-center md:hidden">
-                 <Link to="/collections" className="btn-primary">View All Styles</Link>
-              </div>
           </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {products.slice(0, 3).map((product, index) => (
+              <ProductCard key={product.id} product={product} index={index} />
+            ))}
+          </div>
+
+          <div className="mt-12 text-center md:hidden">
+            <Link to="/collections" className="btn-primary">View All Styles</Link>
+          </div>
+        </div>
       </section>
 
       {/* 5. Precision Lenses Preview */}
@@ -312,7 +312,7 @@ const Home = () => {
                 muted
                 loop
                 playsInline
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover scale-125"
               >
                 <source src="/assets/videos/Spec-2.mp4" type="video/mp4" />
               </video>
@@ -343,16 +343,16 @@ const Home = () => {
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="order-2 lg:order-1 grid grid-cols-2 gap-4">
-               {['Comprehensive Eye Exam', 'Pediatric Vision', 'Contact Lens Fitting', 'Glaucoma Screening'].map((service, i) => (
-                 <div key={i} className="bg-slate-50 p-6 rounded-2xl border border-slate-100 hover:border-accent hover:shadow-md transition-all">
-                   <div className="w-10 h-10 rounded-full bg-accent/10 text-accent flex items-center justify-center mb-4">
-                     <Shield className="w-5 h-5" />
-                   </div>
-                   <h4 className="font-bold text-primary text-sm font-mono">{service}</h4>
-                 </div>
-               ))}
+              {['Comprehensive Eye Exam', 'Pediatric Vision', 'Contact Lens Fitting', 'Glaucoma Screening'].map((service, i) => (
+                <div key={i} className="bg-slate-50 p-6 rounded-2xl border border-slate-100 hover:border-accent hover:shadow-md transition-all">
+                  <div className="w-10 h-10 rounded-full bg-accent/10 text-accent flex items-center justify-center mb-4">
+                    <Shield className="w-5 h-5" />
+                  </div>
+                  <h4 className="font-bold text-primary text-sm font-mono">{service}</h4>
+                </div>
+              ))}
             </div>
-            
+
             <div className="order-1 lg:order-2">
               <h2 className="text-primary mb-6">Expert <span className="text-accent">Clinical Care</span></h2>
               <p className="subheading mb-8">Our state-of-the-art clinic is equipped with the latest diagnostic technology. Our experienced optometrists ensure your eyes are healthy and your vision is perfect.</p>
