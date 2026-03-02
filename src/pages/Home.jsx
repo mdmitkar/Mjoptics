@@ -54,7 +54,7 @@ const Home = () => {
     <main className="bg-secondary min-h-screen">
       
       {/* 1. Hero Section */}
-      <section className="relative min-h-[100vh] w-full flex items-center justify-center overflow-hidden pt-24 pb-16">
+      <section className="relative min-h-screen w-full flex items-center justify-center overflow-hidden pt-24 pb-16">
         <div className="container-custom relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center">
             
@@ -128,31 +128,16 @@ const Home = () => {
                   {/* The Glassmorphism Card */}
                   <div className="absolute inset-0 bg-white/40 backdrop-blur-xl border-2 border-accent-light rounded-[24px] shadow-xl overflow-hidden preserve-3d">
                     
-                    {/* Floating elements inside the 3D card */}
-                    <div className="absolute inset-0 flex flex-col items-center justify-center p-8 translate-z-30">
-                       <motion.div 
-                          animate={{ y: [0, -10, 0] }}
-                          transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-                          className="w-48 h-24 mb-6 relative translate-z-50"
-                       >
-                         {/* Actual 3D glasses Graphic */}
-                         <img src="/images/frame1.png" alt="Premium Eyewear" className="w-full h-full object-contain mix-blend-multiply drop-shadow-xl" />
-                       </motion.div>
-
-                        {/* Visual Specs / Technical Diagram - Increased Size */}
-                        <motion.div 
-                          initial={{ opacity: 0 }}
-                          animate={{ opacity: 1 }}
-                          transition={{ delay: 1.2 }}
-                          className="w-full h-48 mt-6 translate-z-20 overflow-hidden rounded-xl border border-accent/10 p-0 bg-white/50 backdrop-blur-sm"
-                        >
-                          <img 
-                            src="/images/specs_diagram.png" 
-                            alt="Technical Specifications" 
-                            className="w-full h-full object-cover mix-blend-multiply" 
-                          />
-                        </motion.div>
-                     </div>
+                     {/* Spec-4: Full-card 3D Hinge Animation Video */}
+                     <video
+                       autoPlay
+                       muted
+                       loop
+                       playsInline
+                       className="absolute inset-0 w-full h-full object-cover"
+                     >
+                       <source src="/assets/videos/Spec-4.mp4" type="video/mp4" />
+                     </video>
 
                     {/* Decorative blobs inside card but behind content */}
                     <div className="absolute top-[-20%] left-[-10%] w-40 h-40 bg-accent/20 rounded-full blur-3xl translate-z-10" />
@@ -181,7 +166,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* 2. Trust Bar / Stats */}
+      {/* Trust Bar */}
       <section className="py-20 bg-white">
         <div className="container-custom">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-accent-light">
@@ -198,6 +183,42 @@ const Home = () => {
                     <p className="font-semibold text-slate-700">Top Rated Service</p>
                 </div>
             </div>
+        </div>
+      </section>
+
+      {/* Craftsmanship Cinematic Section - spec-1.mp4 */}
+      <section className="relative w-full h-[70vh] overflow-hidden">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src="/assets/videos/spec-1.mp4" type="video/mp4" />
+        </video>
+        {/* Dark gradient overlay */}
+        <div className="absolute inset-0 bg-linear-to-r from-primary/90 via-primary/60 to-transparent" />
+        {/* Content */}
+        <div className="absolute inset-0 flex items-center">
+          <div className="container-custom">
+            <motion.div
+              initial={{ opacity: 0, x: -40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.9 }}
+              className="max-w-xl"
+            >
+              <span className="font-mono text-accent text-sm tracking-widest uppercase mb-4 block">Handcrafted Excellence</span>
+              <h2 className="text-secondary text-4xl md:text-5xl font-bold leading-tight mb-6">
+                Precision Built,<br /><span className="text-accent">Frame by Frame.</span>
+              </h2>
+              <p className="text-secondary/70 text-lg font-sans mb-8">
+                Every pair at MJ Optics is meticulously assembled by skilled craftsmen — from hinge to lens — ensuring a perfect fit and lasting quality.
+              </p>
+              <Link to="/collections" className="btn-primary">Explore Frames</Link>
+            </motion.div>
+          </div>
         </div>
       </section>
 
@@ -222,8 +243,18 @@ const Home = () => {
               <Link to="/about-us" className="btn-outline">Discover Our History</Link>
             </motion.div>
             
-            <div className="relative aspect-square lg:aspect-[4/3] rounded-premium overflow-hidden shadow-2xl">
-              <img src="https://images.unsplash.com/photo-1556228578-0d85b1a4d571?q=80&w=1000&auto=format&fit=crop" alt="Optician at work" className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700" />
+            {/* Spec-5: Magnetic Clip-on Demo - About Us showcase */}
+            <div className="relative aspect-square lg:aspect-4/3 rounded-premium overflow-hidden shadow-2xl group">
+              <video
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+              >
+                <source src="/assets/videos/Spec-5.mp4" type="video/mp4" />
+              </video>
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/30 to-transparent" />
             </div>
           </div>
         </div>
@@ -232,13 +263,25 @@ const Home = () => {
       {/* 4. Collections Preview */}
       <section className="py-24 bg-secondary">
           <div className="container-custom">
-              <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
-                  <div className="max-w-xl">
-                      <h2 className="mb-4 text-primary">Featured <span className="text-accent">Collections</span></h2>
-                      <p className="subheading m-0">Explore our premium selection curated for the discerning eye. From timeless classics to bold modern designs.</p>
-                  </div>
-                  <Link to="/collections" className="btn-primary whitespace-nowrap hidden md:inline-flex">View All Styles</Link>
+            {/* Spec-3: Artistic Lens/Frame Montage Banner */}
+            <div className="relative w-full h-64 rounded-2xl overflow-hidden mb-12 shadow-xl">
+              <video
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="absolute inset-0 w-full h-full object-cover"
+              >
+                <source src="/assets/videos/Spec-3.mp4" type="video/mp4" />
+              </video>
+              <div className="absolute inset-0 bg-gradient-to-r from-primary/80 to-primary/20 flex items-center px-12">
+                <div>
+                  <h2 className="text-secondary mb-2">Featured <span className="text-accent">Collections</span></h2>
+                  <p className="text-secondary/70 max-w-md">Explore our premium selection curated for the discerning eye.</p>
+                </div>
+                <Link to="/collections" className="btn-primary ml-auto hidden md:inline-flex whitespace-nowrap">View All Styles</Link>
               </div>
+            </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                   {products.slice(0, 3).map((product, index) => (
@@ -253,30 +296,44 @@ const Home = () => {
       </section>
 
       {/* 5. Precision Lenses Preview */}
-      <section className="py-24 bg-primary text-secondary relative">
-        <div className="absolute inset-0 opacity-5">
-           <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="w-full h-full">
-               <polygon fill="currentColor" points="0,0 100,100 0,100"/>
-           </svg>
-        </div>
+      <section className="py-24 bg-primary text-secondary relative overflow-hidden">
         <div className="container-custom relative z-10">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <Sparkles className="w-12 h-12 text-accent mx-auto mb-6" />
-            <h2 className="mb-6 text-secondary">Advanced <span className="text-accent">Lens Technology</span></h2>
-            <p className="font-sans text-secondary/80 text-lg">We partner with global leaders like Essilor and Zeiss to provide lenses that offer unparalleled clarity, protection, and durability.</p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {['Anti-Reflective', 'Blue Light Filter', 'Progressive Lenses'].map((tech, i) => (
-              <div key={i} className="border border-secondary/20 p-8 rounded-2xl hover:bg-white/5 transition-colors text-center">
-                <h3 className="font-mono text-xl text-accent mb-3">{tech}</h3>
-                <p className="text-sm font-sans text-secondary/60">Experience crystal-clear vision tailored to your daily digital and active lifestyle.</p>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            {/* Spec-2: Lens UV Coating Video */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="relative rounded-2xl overflow-hidden shadow-2xl aspect-video border border-secondary/10"
+            >
+              <video
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="w-full h-full object-cover"
+              >
+                <source src="/assets/videos/Spec-2.mp4" type="video/mp4" />
+              </video>
+              <div className="absolute bottom-4 left-4 bg-black/60 backdrop-blur-sm px-3 py-1.5 rounded-full">
+                <span className="text-white text-xs font-mono tracking-wider">LENS COATING PROCESS</span>
               </div>
-            ))}
-          </div>
-          
-          <div className="mt-12 text-center">
-            <Link to="/precision-lenses" className="btn-primary bg-secondary text-primary hover:bg-white">Explore Lenses</Link>
+            </motion.div>
+
+            <div>
+              <Sparkles className="w-10 h-10 text-accent mb-6" />
+              <h2 className="mb-6 text-secondary">Advanced <span className="text-accent">Lens Technology</span></h2>
+              <p className="font-sans text-secondary/80 text-lg mb-10">We partner with global leaders like Essilor and Zeiss to provide lenses that offer unparalleled clarity, protection, and durability.</p>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10">
+                {['Anti-Reflective', 'Blue Light Filter', 'Progressive'].map((tech, i) => (
+                  <div key={i} className="border border-secondary/20 p-4 rounded-xl hover:bg-white/5 transition-colors text-center">
+                    <h3 className="font-mono text-sm text-accent">{tech}</h3>
+                  </div>
+                ))}
+              </div>
+              <Link to="/precision-lenses" className="btn-primary bg-secondary text-primary hover:bg-white">Explore Lenses</Link>
+            </div>
           </div>
         </div>
       </section>
