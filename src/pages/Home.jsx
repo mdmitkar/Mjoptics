@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Shield, Sparkles, Heart, ArrowRight } from 'lucide-react';
+import { Shield, Heart, ArrowRight } from 'lucide-react';
 import ProductCard from '../components/ProductCard';
 import { products } from './Collections';
 
@@ -209,7 +209,7 @@ const Home = () => {
               transition={{ duration: 0.9 }}
               className="max-w-xl"
             >
-              <span className="font-mono text-accent text-sm tracking-widest uppercase mb-4 block">Handcrafted Excellence</span>
+              <span className="font-mono text-white text-sm tracking-widest uppercase mb-4 block">Handcrafted Excellence</span>
               <h2 className="text-secondary text-4xl md:text-5xl font-bold leading-tight mb-6">
                 Precision Built,<br /><span className="text-accent">Frame by Frame.</span>
               </h2>
@@ -322,13 +322,12 @@ const Home = () => {
             </motion.div>
 
             <div>
-              <Sparkles className="w-10 h-10 text-accent mb-6" />
               <h2 className="mb-6 text-secondary">Advanced <span className="text-accent">Lens Technology</span></h2>
               <p className="font-sans text-secondary/80 text-lg mb-10">We partner with global leaders like Essilor and Zeiss to provide lenses that offer unparalleled clarity, protection, and durability.</p>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10">
                 {['Anti-Reflective', 'Blue Light Filter', 'Progressive'].map((tech, i) => (
                   <div key={i} className="border border-secondary/20 p-4 rounded-xl hover:bg-white/5 transition-colors text-center">
-                    <h3 className="font-mono text-sm text-accent">{tech}</h3>
+                    <h3 className="font-mono text-sm text-white">{tech}</h3>
                   </div>
                 ))}
               </div>

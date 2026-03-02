@@ -1,5 +1,5 @@
 import React from 'react';
-import { Sparkles, ArrowRight, Zap } from 'lucide-react';
+import { ArrowRight, Zap } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const OfferSection = () => {
@@ -22,7 +22,7 @@ const OfferSection = () => {
                         />
                         <div className="absolute inset-0 bg-linear-to-r from-primary/95 via-primary/60 to-transparent flex flex-col justify-center p-8 lg:p-12 text-white space-y-6">
                             <div className="flex items-center gap-2 bg-accent/90 backdrop-blur-sm px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-[0.2em] w-fit shadow-md border border-white/20">
-                                <Sparkles className="w-3 h-3" /> Exclusive Selection
+                                Exclusive Selection
                             </div>
                             <h2 className="text-3xl lg:text-4xl font-serif font-black text-white leading-tight tracking-tight">
                                 Buy 2 Pairs & <br />

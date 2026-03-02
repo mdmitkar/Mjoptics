@@ -11,7 +11,7 @@ export const products = [
     "category": "Sunglasses",
     "price": "$290",
     "tags": ["Premium", "Bestseller"],
-    "baseImage": "/images/frame2.png",
+    "baseImage": "/images/sunglass3.png",
     "colors": [
       { "name": "Classic Black", "hex": "#1e293b", "filter": "brightness(0.2)" },
       { "name": "Gold/Tortoise", "hex": "#d97706", "filter": "hue-rotate(30deg) saturate(1.5) brightness(1.1)" }
@@ -24,7 +24,7 @@ export const products = [
     "category": "Sunglasses",
     "price": "$160",
     "tags": ["Polarized"],
-    "baseImage": "/images/frame2.png",
+    "baseImage": "/images/sunglass1.png",
     "colors": [
       { "name": "Classic Black", "hex": "#1e293b", "filter": "brightness(0.2)" },
       { "name": "Navy Blue", "hex": "#1d4ed8", "filter": "hue-rotate(210deg) saturate(1.5) brightness(0.7)" },
@@ -38,7 +38,7 @@ export const products = [
     "category": "Sunglasses",
     "price": "$140",
     "tags": ["Lightweight", "Polarized"],
-    "baseImage": "/images/frame2.png",
+    "baseImage": "/images/sunglass2.png",
     "colors": [
       { "name": "Crimson Red", "hex": "#be123c", "filter": "hue-rotate(330deg) saturate(2) brightness(0.8)" },
       { "name": "Silver Tone", "hex": "#94a3b8", "filter": "saturate(0) brightness(1.3)" }
@@ -117,7 +117,7 @@ export const products = [
     "category": "Sunglasses",
     "price": "$170",
     "tags": ["Bestseller", "Polarized"],
-    "baseImage": "/images/frame2.png",
+    "baseImage": "/images/sunglass5.png",
     "colors": [
       { "name": "Gold/Tortoise", "hex": "#d97706", "filter": "hue-rotate(30deg) saturate(1.5) brightness(1.1)" },
       { "name": "Classic Black", "hex": "#1e293b", "filter": "brightness(0.2)" }
@@ -130,7 +130,7 @@ export const products = [
     "category": "Sunglasses",
     "price": "$150",
     "tags": ["Polarized"],
-    "baseImage": "/images/frame2.png",
+    "baseImage": "/images/sunglass2.png",
     "colors": [
       { "name": "Classic Black", "hex": "#1e293b", "filter": "brightness(0.2)" },
       { "name": "Navy Blue", "hex": "#1d4ed8", "filter": "hue-rotate(210deg) saturate(1.5) brightness(0.7)" },
@@ -144,7 +144,7 @@ export const products = [
     "category": "Eyeglasses",
     "price": "$110",
     "tags": ["New Arrival"],
-    "baseImage": "/images/frame1.png",
+    "baseImage": "/images/sunglass4.png",
     "colors": [
       { "name": "Rose Gold", "hex": "#fda4af", "filter": "hue-rotate(330deg) saturate(1.2) brightness(1.4)" },
       { "name": "Crimson Red", "hex": "#be123c", "filter": "hue-rotate(330deg) saturate(2) brightness(0.8)" }
@@ -157,7 +157,7 @@ export const products = [
     "category": "Sunglasses",
     "price": "$220",
     "tags": ["Premium", "Essential"],
-    "baseImage": "/images/frame2.png",
+    "baseImage": "/images/sunglass1.png",
     "colors": [
       { "name": "Gold/Tortoise", "hex": "#d97706", "filter": "hue-rotate(30deg) saturate(1.5) brightness(1.1)" },
       { "name": "Forest Green", "hex": "#15803d", "filter": "hue-rotate(120deg) saturate(1.2) brightness(0.6)" }
@@ -197,7 +197,7 @@ export const products = [
     "category": "Sunglasses",
     "price": "$165",
     "tags": ["Bestseller"],
-    "baseImage": "/images/frame3.png",
+    "baseImage": "/images/sunglass3.png",
     "colors": [
       { "name": "Gold/Tortoise", "hex": "#d97706", "filter": "hue-rotate(30deg) saturate(1.5) brightness(1.1)" },
       { "name": "Silver Tone", "hex": "#94a3b8", "filter": "saturate(0) brightness(1.3)" }
@@ -249,7 +249,7 @@ export const products = [
     "category": "Sunglasses",
     "price": "$260",
     "tags": ["Premium"],
-    "baseImage": "/images/frame2.png",
+    "baseImage": "/images/sunglass5.png",
     "colors": [
       { "name": "Gold/Tortoise", "hex": "#d97706", "filter": "hue-rotate(30deg) saturate(1.5) brightness(1.1)" },
       { "name": "Classic Black", "hex": "#1e293b", "filter": "brightness(0.2)" }
@@ -262,7 +262,7 @@ export const products = [
     "category": "Sunglasses",
     "price": "$130",
     "tags": ["Polarized"],
-    "baseImage": "/images/frame2.png",
+    "baseImage": "/images/sunglass3.png",
     "colors": [
       { "name": "Silver Tone", "hex": "#94a3b8", "filter": "saturate(0) brightness(1.3)" },
       { "name": "Navy Blue", "hex": "#1d4ed8", "filter": "hue-rotate(210deg) saturate(1.5) brightness(0.7)" }

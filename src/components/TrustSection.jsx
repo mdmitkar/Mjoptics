@@ -1,12 +1,12 @@
 import React from 'react';
-import { Award, ShieldCheck, Heart, Sparkles } from 'lucide-react';
+import { Award, ShieldCheck, Heart, Star } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const stats = [
     { icon: Award, label: '23 Years Legacy', desc: 'Verified Expertise', color: 'text-primary' },
     { icon: ShieldCheck, label: 'Certified Care', desc: 'Eye Testing', color: 'text-accent' },
     { icon: Heart, label: '1000+ Happy Eyes', desc: 'Trust of Kalyan', color: 'text-primary' },
-    { icon: Sparkles, label: 'Luxury Brands', desc: 'Premium Frames', color: 'text-accent' },
+    { icon: Star, label: 'Luxury Brands', desc: 'Premium Frames', color: 'text-accent' },
 ];
 
 const containerVariants = {

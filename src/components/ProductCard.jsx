@@ -26,9 +26,8 @@ const ProductCard = ({ product, index }) => {
         <div className="absolute bottom-12 w-3/4 h-8 bg-black/5 rounded-full blur-xl transform group-hover:scale-110 transition-transform duration-500" />
         <img 
           src={product.baseImage} 
-          alt={product.name} 
-          style={{ filter: activeColor.filter }}
-          className="w-full h-full object-contain mix-blend-multiply transform group-hover:scale-105 transition-all duration-700 ease-out z-10"
+          alt={product.name}
+          className="w-full h-full object-contain transform group-hover:scale-105 transition-all duration-700 ease-out z-10"
         />
       </div>
 
